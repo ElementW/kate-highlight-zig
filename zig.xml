@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "language.dtd"
+[
+    <!ENTITY int "(?:[0-9]+)">
+    <!ENTITY bin_int "(?:[01]+)">
+    <!ENTITY oct_int "(?:[0-7]+)">
+    <!ENTITY hex_int "(?:[0-9A-Fa-f]+)">
+    <!ENTITY exp_float "(?:[eE][+-]?&int;)">
+    <!ENTITY exp_hexfloat "(?:[pP][-+]?&int;)">
+]>
+<language name="Zig" section="Sources"
+          version="1" kateversion="5.0"
+          indenter="cstyle"
+          extensions="*.zig"
+          mimetype="text/x-zigsrc"
+          priority="5">
+  <highlighting>
+    <list name="controlflow">
+      <item>async</item>
+      <item>await</item>
+      <item>break</item>
+      <item>catch</item>
+      <item>continue</item>
+      <item>defer</item>
+      <item>else</item>
+      <item>errdefer</item>
+      <item>error</item>
+      <item>for</item>
+      <item>if</item>
+      <item>orelse</item>
+      <item>promise</item>
+      <item>resume</item>
+      <item>return</item>
+      <item>suspend</item>
+      <item>switch</item>
+      <item>try</item>
+      <item>unreachable</item>
+      <item>while</item>
+    </list>
+    <list name="keywords">
+      <item>and</item>
+      <item>asm</item>
+      <item>comptime</item>
+      <item>enum</item>
+      <item>export</item>
+      <item>extern</item>
+      <item>false</item>
+      <item>fn</item>
+      <item>inline</item>
+      <item>nakedcc</item>
+      <item>noalias</item>
+      <item>null</item>
+      <item>or</item>
+      <item>pub</item>
+      <item>linksection</item>
+      <item>stdcallcc</item>
+      <item>struct</item>
+      <item>test</item>
+      <item>true</item>
+      <item>undefined</item>
+      <item>union</item>
+      <item>usingnamespace</item>
+      <item>var</item>
+    </list>
+    <list name="attributes">
+      <item>align</item>
+      <item>allowzero</item>
+      <item>const</item>
+      <item>packed</item>
+      <item>threadlocal</item>
+      <item>volatile</item>
+    </list>
+    <list name="types">
+      <item>i8</item>
+      <item>u8</item>
+      <item>i16</item>
+      <item>u16</item>
+      <item>i32</item>
+      <item>u32</item>
+      <item>i64</item>
+      <item>u64</item>
+      <item>i128</item>
+      <item>u128</item>
+      <item>isize</item>
+      <item>usize</item>
+      <item>c_short</item>
+      <item>c_ushort</item>
+      <item>c_int</item>
+      <item>c_uint</item>
+      <item>c_long</item>
+      <item>c_ulong</item>
+      <item>c_longlong</item>
+      <item>c_ulonglong</item>
+      <item>c_longdouble</item>
+      <item>c_void</item>
+      <item>f16</item>
+      <item>f32</item>
+      <item>f64</item>
+      <item>f128</item>
+      <item>bool</item>
+      <item>void</item>
+      <item>noreturn</item>
+      <item>type</item>
+      <item>anyerror</item>
+      <item>comptime_int</item>
+      <item>comptime_float</item>
+    </list>
+    <list name="builtins">
+      <item>@addWithOverflow</item>
+      <item>@alignCast</item>
+      <item>@alignOf</item>
+      <item>@ArgType</item>
+      <item>@as</item>
+      <item>@asyncCall</item>
+      <item>@atomicLoad</item>
+      <item>@atomicRmw</item>
+      <item>@atomicStore</item>
+      <item>@bitCast</item>
+      <item>@bitOffsetOf</item>
+      <item>@boolToInt</item>
+      <item>@breakpoint</item>
+      <item>@mulAdd</item>
+      <item>@byteSwap</item>
+      <item>@bitReverse</item>
+      <item>@byteOffsetOf</item>
+      <item>@bytesToSlice</item>
+      <item>@call</item>
+      <item>@cDefine</item>
+      <item>@cImport</item>
+      <item>@cInclude</item>
+      <item>@clz</item>
+      <item>@cmpxchgStrong</item>
+      <item>@cmpxchgWeak</item>
+      <item>@compileError</item>
+      <item>@compileLog</item>
+      <item>@ctz</item>
+      <item>@cUndef</item>
+      <item>@divExact</item>
+      <item>@divFloor</item>
+      <item>@divTrunc</item>
+      <item>@embedFile</item>
+      <item>@enumToInt</item>
+      <item>@errorName</item>
+      <item>@errorReturnTrace</item>
+      <item>@errorToInt</item>
+      <item>@errSetCast</item>
+      <item>@export</item>
+      <item>@fence</item>
+      <item>@field</item>
+      <item>@fieldParentPtr</item>
+      <item>@floatCast</item>
+      <item>@floatToInt</item>
+      <item>@frame</item>
+      <item>@Frame</item>
+      <item>@frameAddress</item>
+      <item>@frameSize</item>
+      <item>@hasDecl</item>
+      <item>@hasField</item>
+      <item>@import</item>
+      <item>@intCast</item>
+      <item>@intToEnum</item>
+      <item>@intToError</item>
+      <item>@intToFloat</item>
+      <item>@intToPtr</item>
+      <item>@IntType</item>
+      <item>@memberCount</item>
+      <item>@memberName</item>
+      <item>@memberType</item>
+      <item>@memcpy</item>
+      <item>@memset</item>
+      <item>@mod</item>
+      <item>@mulWithOverflow</item>
+      <item>@OpaqueType</item>
+      <item>@panic</item>
+      <item>@popCount</item>
+      <item>@ptrCast</item>
+      <item>@ptrToInt</item>
+      <item>@rem</item>
+      <item>@returnAddress</item>
+      <item>@setAlignStack</item>
+      <item>@setCold</item>
+      <item>@setEvalBranchQuota</item>
+      <item>@setFloatMode</item>
+      <item>@setRuntimeSafety</item>
+      <item>@shlExact</item>
+      <item>@shlWithOverflow</item>
+      <item>@shrExact</item>
+      <item>@shuffle</item>
+      <item>@sizeOf</item>
+      <item>@sliceToBytes</item>
+      <item>@splat</item>
+      <item>@sqrt</item>
+      <item>@sin</item>
+      <item>@cos</item>
+      <item>@exp</item>
+      <item>@exp2</item>
+      <item>@ln</item>
+      <item>@log2</item>
+      <item>@log10</item>
+      <item>@fabs</item>
+      <item>@floor</item>
+      <item>@ceil</item>
+      <item>@trunc</item>
+      <item>@round</item>
+      <item>@subWithOverflow</item>
+      <item>@tagName</item>
+      <item>@TagType</item>
+      <item>@This</item>
+      <item>@truncate</item>
+      <item>@Type</item>
+      <item>@typeId</item>
+      <item>@typeInfo</item>
+      <item>@typeName</item>
+      <item>@TypeOf</item>
+      <item>@unionInit</item>
+      <item>@Vector</item>
+    </list>
+    <contexts>
+      <context attribute="Normal Text" lineEndContext="#stay" name="Normal">
+        <DetectSpaces />
+        <keyword attribute="Control Flow" context="#stay" String="controlflow"/>
+        <keyword attribute="Keyword" context="#stay" String="keywords"/>
+        <keyword attribute="Type Attribute" context="#stay" String="attributes"/>
+        <keyword attribute="Data Type" context="#stay" String="types"/>
+        <keyword attribute="Builtin" context="#stay" String="builtins"/>
+        <DetectIdentifier />
+        <DetectChar attribute="Symbol" context="#stay" char="{" beginRegion="Brace1" />
+        <DetectChar attribute="Symbol" context="#stay" char="}" endRegion="Brace1" />
+
+        <!-- Match numbers -->
+        <RegExpr attribute="Decimal" context="Number" String="\.?[0-9]" lookAhead="true" />
+
+        <HlCChar attribute="Char" context="#stay"/>
+        <DetectChar attribute="String" context="String" char="&quot;"/>
+        <Detect2Chars attribute="Multiline String" context="MLString" char="\" char1="\"/>
+        <Detect2Chars attribute="Comment" context="Commentar 1" char="/" char1="/"/>
+        <Detect2Chars attribute="Comment" context="Commentar 2" char="/" char1="*" beginRegion="Comment"/>
+        <AnyChar attribute="Symbol" context="#stay" String=":!%&amp;()+,-/.*&lt;=&gt;?[]|~^&#59;"/>
+      </context>
+
+      <context attribute="Multiline String" lineEndContext="#pop" name="MLString">
+      </context>
+
+      <context attribute="String" lineEndContext="#pop" name="String">
+        <LineContinue attribute="String" context="#stay"/>
+        <HlCStringChar attribute="String Char" context="#stay"/>
+        <DetectChar attribute="String" context="#pop" char="&quot;"/>
+      </context>
+
+      <context attribute="Comment" lineEndContext="#pop" name="Commentar 1">
+        <LineContinue attribute="Comment" context="#stay"/>
+        <IncludeRules context="##Alerts" />
+      </context>
+
+      <context attribute="Comment" lineEndContext="#stay" name="Commentar 2">
+        <Detect2Chars attribute="Comment" context="#pop" char="*" char1="/" endRegion="Comment"/>
+        <IncludeRules context="##Alerts" />
+      </context>
+
+      <context name="Number" attribute="Normal Text" lineEndContext="#pop" fallthrough="true" fallthroughContext="#pop">
+        <RegExpr attribute="Float" context="#pop" String="\.&int;&exp_float;?|&int;(?:&exp_float;|\.&int;?&exp_float;?)|0x(?:\.&hex_int;&exp_hexfloat;?|&hex_int;(?:&exp_hexfloat;|\.&hex_int;?&exp_hexfloat;?))" />
+        <IncludeRules context="Integer" />
+      </context>
+
+      <context name="Integer" attribute="Normal Text" lineEndContext="#pop" fallthrough="true" fallthroughContext="#pop">
+        <RegExpr attribute="Hex" context="#pop" String="0x&hex_int;" />
+        <RegExpr attribute="Binary" context="#pop" String="0b&bin_int;" />
+        <RegExpr attribute="Octal" context="#pop" String="0o&oct_int;" />
+        <RegExpr attribute="Decimal" context="#pop" String="0(?:(?![xbo])[0-9]?)|[1-9]+" />
+      </context>
+    </contexts>
+    <itemDatas>
+      <itemData name="Normal Text"  defStyleNum="dsNormal" spellChecking="false"/>
+      <itemData name="Control Flow" defStyleNum="dsControlFlow" spellChecking="false"/>
+      <itemData name="Keyword"      defStyleNum="dsKeyword" spellChecking="false"/>
+      <itemData name="Type Attribute" defStyleNum="dsAttribute" spellChecking="false"/>
+      <itemData name="Data Type"    defStyleNum="dsDataType" spellChecking="false"/>
+      <itemData name="Builtin"      defStyleNum="dsBuiltIn" spellChecking="false"/>
+      <itemData name="Decimal"      defStyleNum="dsDecVal" spellChecking="false"/>
+      <itemData name="Octal"        defStyleNum="dsBaseN" spellChecking="false"/>
+      <itemData name="Hex"          defStyleNum="dsBaseN" spellChecking="false"/>
+      <itemData name="Binary"       defStyleNum="dsBaseN" spellChecking="false"/>
+      <itemData name="Float"        defStyleNum="dsFloat" spellChecking="false"/>
+      <itemData name="Char"         defStyleNum="dsChar" spellChecking="false"/>
+      <itemData name="String"       defStyleNum="dsString"/>
+      <itemData name="String Char"  defStyleNum="dsSpecialChar"/>
+      <itemData name="Multiline String" defStyleNum="dsString"/>
+      <itemData name="Comment"      defStyleNum="dsComment"/>
+      <itemData name="Symbol"       defStyleNum="dsNormal" spellChecking="false"/>
+      <itemData name="Error"        defStyleNum="dsError" spellChecking="false"/>
+    </itemDatas>
+  </highlighting>
+  <general>
+    <comments>
+      <comment name="singleLine" start="//" />
+      <comment name="multiLine" start="/*" end="*/" />
+    </comments>
+    <keywords casesensitive="1" additionalDeliminator="'&quot;" />
+  </general>
+</language>
