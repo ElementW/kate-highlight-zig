@@ -24,11 +24,9 @@
       <item>defer</item>
       <item>else</item>
       <item>errdefer</item>
-      <item>error</item>
       <item>for</item>
       <item>if</item>
       <item>orelse</item>
-      <item>promise</item>
       <item>resume</item>
       <item>return</item>
       <item>suspend</item>
@@ -40,20 +38,21 @@
     <list name="keywords">
       <item>and</item>
       <item>asm</item>
-      <item>comptime</item>
+      <item>callconv</item>
       <item>enum</item>
+      <item>error</item>
       <item>export</item>
       <item>extern</item>
       <item>false</item>
       <item>fn</item>
       <item>inline</item>
-      <item>nakedcc</item>
-      <item>noalias</item>
+      <item>nosuspend</item>
+      <item>noinline</item>
       <item>null</item>
-      <item>or</item>
+      <item>opaque</item>
+      <item>opaque</item>
       <item>pub</item>
       <item>linksection</item>
-      <item>stdcallcc</item>
       <item>struct</item>
       <item>test</item>
       <item>true</item>
@@ -65,7 +64,9 @@
     <list name="attributes">
       <item>align</item>
       <item>allowzero</item>
+      <item>comptime</item>
       <item>const</item>
+      <item>noalias</item>
       <item>packed</item>
       <item>threadlocal</item>
       <item>volatile</item>
@@ -104,12 +105,13 @@
       <item>anyerror</item>
       <item>comptime_int</item>
       <item>comptime_float</item>
+      <item>anyframe</item>
+      <item>anytype</item>
     </list>
     <list name="builtins">
       <item>@addWithOverflow</item>
       <item>@alignCast</item>
       <item>@alignOf</item>
-      <item>@ArgType</item>
       <item>@as</item>
       <item>@asyncCall</item>
       <item>@atomicLoad</item>
@@ -117,15 +119,14 @@
       <item>@atomicStore</item>
       <item>@bitCast</item>
       <item>@bitOffsetOf</item>
+      <item>@bitReverse</item>
+      <item>@bitSizeOf</item>
       <item>@boolToInt</item>
       <item>@breakpoint</item>
-      <item>@mulAdd</item>
       <item>@byteSwap</item>
-      <item>@bitReverse</item>
-      <item>@byteOffsetOf</item>
-      <item>@bytesToSlice</item>
       <item>@call</item>
       <item>@cDefine</item>
+      <item>@ceil</item>
       <item>@cImport</item>
       <item>@cInclude</item>
       <item>@clz</item>
@@ -133,6 +134,7 @@
       <item>@cmpxchgWeak</item>
       <item>@compileError</item>
       <item>@compileLog</item>
+      <item>@cos</item>
       <item>@ctz</item>
       <item>@cUndef</item>
       <item>@divExact</item>
@@ -144,15 +146,20 @@
       <item>@errorReturnTrace</item>
       <item>@errorToInt</item>
       <item>@errSetCast</item>
+      <item>@exp2</item>
+      <item>@exp</item>
       <item>@export</item>
+      <item>@extern</item>
+      <item>@fabs</item>
       <item>@fence</item>
       <item>@field</item>
       <item>@fieldParentPtr</item>
       <item>@floatCast</item>
       <item>@floatToInt</item>
+      <item>@floor</item>
+      <item>@frameAddress</item>
       <item>@frame</item>
       <item>@Frame</item>
-      <item>@frameAddress</item>
       <item>@frameSize</item>
       <item>@hasDecl</item>
       <item>@hasField</item>
@@ -162,21 +169,26 @@
       <item>@intToError</item>
       <item>@intToFloat</item>
       <item>@intToPtr</item>
-      <item>@IntType</item>
-      <item>@memberCount</item>
-      <item>@memberName</item>
-      <item>@memberType</item>
+      <item>@log10</item>
+      <item>@log2</item>
+      <item>@log</item>
+      <item>@maximum</item>
       <item>@memcpy</item>
       <item>@memset</item>
+      <item>@minimum</item>
       <item>@mod</item>
+      <item>@mulAdd</item>
       <item>@mulWithOverflow</item>
-      <item>@OpaqueType</item>
+      <item>@offsetOf</item>
       <item>@panic</item>
       <item>@popCount</item>
       <item>@ptrCast</item>
       <item>@ptrToInt</item>
+      <item>@reduce</item>
       <item>@rem</item>
       <item>@returnAddress</item>
+      <item>@round</item>
+      <item>@select</item>
       <item>@setAlignStack</item>
       <item>@setCold</item>
       <item>@setEvalBranchQuota</item>
@@ -186,34 +198,23 @@
       <item>@shlWithOverflow</item>
       <item>@shrExact</item>
       <item>@shuffle</item>
+      <item>@sin</item>
       <item>@sizeOf</item>
-      <item>@sliceToBytes</item>
       <item>@splat</item>
       <item>@sqrt</item>
-      <item>@sin</item>
-      <item>@cos</item>
-      <item>@exp</item>
-      <item>@exp2</item>
-      <item>@ln</item>
-      <item>@log2</item>
-      <item>@log10</item>
-      <item>@fabs</item>
-      <item>@floor</item>
-      <item>@ceil</item>
-      <item>@trunc</item>
-      <item>@round</item>
+      <item>@src</item>
       <item>@subWithOverflow</item>
       <item>@tagName</item>
-      <item>@TagType</item>
       <item>@This</item>
       <item>@truncate</item>
-      <item>@Type</item>
-      <item>@typeId</item>
+      <item>@trunc</item>
       <item>@typeInfo</item>
+      <item>@Type</item>
       <item>@typeName</item>
       <item>@TypeOf</item>
       <item>@unionInit</item>
-      <item>@Vector</item>
+      <item>@wasmMemoryGrow</item>
+      <item>@wasmMemorySize</item>
     </list>
     <contexts>
       <context attribute="Normal Text" lineEndContext="#stay" name="Normal">
