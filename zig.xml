@@ -72,16 +72,6 @@
       <item>volatile</item>
     </list>
     <list name="types">
-      <item>i8</item>
-      <item>u8</item>
-      <item>i16</item>
-      <item>u16</item>
-      <item>i32</item>
-      <item>u32</item>
-      <item>i64</item>
-      <item>u64</item>
-      <item>i128</item>
-      <item>u128</item>
       <item>isize</item>
       <item>usize</item>
       <item>c_short</item>
@@ -223,6 +213,8 @@
         <keyword attribute="Keyword" context="#stay" String="keywords"/>
         <keyword attribute="Type Attribute" context="#stay" String="attributes"/>
         <keyword attribute="Data Type" context="#stay" String="types"/>
+        <!-- Match non-power of two ints -->
+        <RegExpr attribute="Data Type" context="#stay" String="[ui]0*(?:6553[0-5]|655[0-2]\d|65[0-4]\d{2}|6[0-4]\d{3}|[1-5]\d{4}|\d{1,4})(?!\d)" />
         <keyword attribute="Builtin" context="#stay" String="builtins"/>
         <DetectIdentifier />
         <DetectChar attribute="Symbol" context="#stay" char="{" beginRegion="Brace1" />
