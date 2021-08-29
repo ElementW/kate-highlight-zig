@@ -61,6 +61,7 @@
       <item>union</item>
       <item>usingnamespace</item>
       <item>var</item>
+      <item>...</item>
     </list>
     <list name="attributes">
       <item>align</item>
