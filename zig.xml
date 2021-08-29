@@ -7,6 +7,7 @@
     <!ENTITY hex_int "(?:[0-9A-Fa-f](?:_?[0-9A-Fa-f])*)">
     <!ENTITY exp_float "(?:[eE][+-]?&int;)">
     <!ENTITY exp_hexfloat "(?:[pP][-+]?&int;)">
+    <!ENTITY char_escape "(?:\\(?:[nrt\\\'\&quot;]|x[0-9a-fA-F]{2}|u{[0-9a-fA-F]{1,6}}))">
 ]>
 <language name="Zig" section="Sources"
           version="1" kateversion="5.0"
@@ -223,6 +224,7 @@
         <!-- Match numbers -->
         <RegExpr attribute="Decimal" context="Number" String="\.?[0-9]" lookAhead="true" />
 
+        <RegExpr attribute="Char" context="#stay" String="'(?:.|&char_escape;)'" />
         <HlCChar attribute="Char" context="#stay"/>
         <DetectChar attribute="String" context="String" char="&quot;"/>
         <Detect2Chars attribute="Multiline String" context="MLString" char="\" char1="\"/>
@@ -236,7 +238,7 @@
 
       <context attribute="String" lineEndContext="#pop" name="String">
         <LineContinue attribute="String" context="#stay"/>
-        <HlCStringChar attribute="String Char" context="#stay"/>
+        <RegExpr attribute="String Char" context="#stay" String="&char_escape;" />
         <DetectChar attribute="String" context="#pop" char="&quot;"/>
       </context>
 
