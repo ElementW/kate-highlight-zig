@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "language.dtd"
 [
-    <!ENTITY int "(?:[0-9]+)">
-    <!ENTITY bin_int "(?:[01]+)">
-    <!ENTITY oct_int "(?:[0-7]+)">
-    <!ENTITY hex_int "(?:[0-9A-Fa-f]+)">
+    <!ENTITY int "(?:[0-9](?:_?[0-9])*)">
+    <!ENTITY bin_int "(?:[01](?:_?[01])*)">
+    <!ENTITY oct_int "(?:[0-7](?:_?[0-7])*)">
+    <!ENTITY hex_int "(?:[0-9A-Fa-f](?:_?[0-9A-Fa-f])*)">
     <!ENTITY exp_float "(?:[eE][+-]?&int;)">
     <!ENTITY exp_hexfloat "(?:[pP][-+]?&int;)">
 ]>
@@ -267,7 +267,7 @@
         <RegExpr attribute="Hex" context="#pop" String="0x&hex_int;" />
         <RegExpr attribute="Binary" context="#pop" String="0b&bin_int;" />
         <RegExpr attribute="Octal" context="#pop" String="0o&oct_int;" />
-        <RegExpr attribute="Decimal" context="#pop" String="0(?:(?![xbo])[0-9]?)|[1-9]+" />
+        <RegExpr attribute="Decimal" context="#pop" String="(?:0(?![xbo])|[1-9])(?:_?[0-9])*" />
       </context>
     </contexts>
     <itemDatas>
